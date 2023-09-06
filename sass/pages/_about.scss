@@ -1,0 +1,33 @@
+.about{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include md{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    @include lg{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__img{
+        border-radius: 10%;
+        max-width: 250px;
+        @include lg{
+            max-width: 250px;
+        }
+    }
+    &__title{
+        margin-top: 15px;
+        margin-bottom: 50px;
+        font-size: $font-m;
+        font-weight: 500;
+    }
+}
+.desc{
+    font-size: $font-m;
+}

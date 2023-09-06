@@ -1,0 +1,32 @@
+@mixin sm{
+    @media screen and (min-width: 576px){
+        @content
+    }
+}
+@mixin md{
+    @media screen and (min-width: 768px){
+        @content
+    }
+}
+@mixin lg{
+    @media screen and (min-width: 992px){
+        @content
+    }
+}
+@mixin xl{
+    @media screen and (min-width: 1300px){
+        @content
+    }
+}
+
+// font-style
+@mixin font($fontSize , $fontWeight){
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+// backdrop-filter
+@mixin backdrop-filter($blur){
+    -webkit-backdrop-filter: $blur;
+    backdrop-filter: $blur;
+}

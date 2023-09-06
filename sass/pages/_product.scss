@@ -1,0 +1,182 @@
+// top-info
+.product__info{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    &__title{
+        color: rgba($fontColor-product,.7);
+        @include font(3rem,700);
+        line-height: 1.3;
+        @include lg{
+            @include font(4rem,700);
+        }
+    }
+    &__num{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    &__desc{
+        font-size: 1rem;
+        font-weight: 500;
+        color: $fontColor-product;
+        @include md{
+            font-size: $font-m;
+        }
+    }
+    &__img{
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        border: 1px solid rgba($borderColor-product,.1);
+        box-shadow: 5px 5px 10px rgba($bgColor-product,.2);
+        @include md{
+            max-width: 400px;
+        }
+        @include lg{
+            max-width: 450px;
+        }
+    }
+}
+
+// bottom-list
+.listBox{
+    color: $fontColor-product;
+}
+.list__title{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: $fontColor-product-title;
+    @include font($font-xl,500);
+    @include md{
+        font-size: 2rem;
+    }
+}
+.list__descTitle{
+    @include font($font-m,700);
+}
+.list__btn{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba($bgColor-product,.2);
+    @include lg{
+        display: none;
+    }
+    &__toggle{
+        position: relative;
+        width: 25px;
+        height: 2px;
+        top: 0;
+        border-radius: 10px;
+        background-color: $btnColor-product;
+        transition: all .5s ease-in-out;
+        &.active{
+            transform: rotate(-180deg);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            background-color: $btnColor-product;
+            transform: rotate(90deg);
+            transition: all .5s ease-in-out;
+        }
+        &.active::after{
+            transform: rotate(360deg);
+        }
+    }
+}
+.list{
+    display: none;
+    padding-bottom: 20px;
+    @include lg{
+        display: block;
+    }
+}
+.list li{
+    margin-bottom: 20px;
+}
+.list-icon{
+    @include md{
+        text-align: center;
+    }
+}
+.list-icon::before{
+    content: "\f601";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+}
+.list__backBtn{
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: 0px 5px 5px rgba($borderColor-product, 0.2);
+    border: 1px solid rgba($bgColor-product, 0.2);
+    color: $fontColor-product;
+    &:hover{
+        transition: all .3s ease-in-out;
+        background-color: rgba($bgColor-product, 0.2);
+    }
+    @include md{
+        width: 40%;
+    }
+    @include lg{
+        width: 30%;
+    }
+    &::before{
+        content: '\f177';
+        position: absolute;
+        left: 15%;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
+    }
+}
+
+.dividedLine{
+    background-color: black;
+    height: 2px;
+}
+
+// 加載出現時間
+.product__info,.product__info__img,.listBox,.dividedLine,.list__backBtn{
+    animation-duration: var(--animate-duration);
+    animation-fill-mode: both;
+}
+.product__info{
+    animation-name: fadeInLeft;
+    animation-delay: calc(var(--animate-delay) * 0.1);
+}
+.product__info__img{
+    animation-name: zoomIn;
+    animation-delay: calc(var(--animate-delay) * 0.3);
+}
+.listBox{
+    animation-name: fadeInLeft;
+    animation-delay: calc(var(--animate-delay) * 0.7);
+}
+.dividedLine{
+    animation-name: fadeInLeft;
+    animation-delay: calc(var(--animate-delay) * 0.7);
+}
+.list__backBtn{
+    animation-name: zoomIn;
+    animation-delay: calc(var(--animate-delay) * 0.9);
+}

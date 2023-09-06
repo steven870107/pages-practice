@@ -1,0 +1,82 @@
+.footer{
+    width: 100%;
+    background-color: $bgColor-footer;
+}
+.contact{
+    &__title{
+        @include font(3.5rem,700);
+        line-height: 1;
+        color: $fontColor-footer;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    &__social{
+        display: inline-block;
+        & a{
+            font-size: 20px;
+            display: block;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            border-radius: 100%;
+            text-align: center;
+            background-color: $bgColor-social;
+            transition: all .2s linear;
+            &.facebook{
+                color: $fontColor-social-fb;
+                &:hover,&:focus,&:active{
+                color: $fontColor-footer;
+                background-color: $bgColor-social-fb;
+                box-shadow: 0 0 15px $bgColor-social-fb;
+                }
+            }
+            &.instagram{
+                color: $fontColor-social-ig;
+                &:hover,&:focus,&:active{
+                color: $fontColor-footer;
+                background-color: $bgColor-social-ig;
+                box-shadow: 0 0 15px $bgColor-social-ig;
+                }
+            }
+        }
+    }
+    &__info{
+        & i{
+            color: $iconColor-footer;
+        }
+        &__item{
+            margin-top: 5px;
+            color: $fontColor-footer;
+            @include lg{
+                margin-top: 15px;
+            }
+        }
+    }
+    &__copyright{
+        font-size: $font-xs;
+        background-color: #fff;
+        padding: 10px 5px 10px 5px;
+        text-align: center;
+    }
+}
+#gotop{
+    z-index: $zindexGotop;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    background-color: $bgColor-gotop;
+    box-shadow: 0px 0px 5px $fontColor-gotop;
+    color: $fontColor-gotop;
+
+    transform: translateX(200%) scale(0) rotate(180deg);
+    transition: all .5s ease-in-out;
+}
+#gotop.show{
+    transform: translateX(0) scale(1) rotate(0);
+}

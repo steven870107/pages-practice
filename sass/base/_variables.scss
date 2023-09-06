@@ -1,0 +1,56 @@
+// unit base
+$spacing:10px;
+/* font style */
+$font-family-base: "Poppins", "Noto Sans TC", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+// color
+$color-primary: #000;
+$color-secondary: #fff;
+$color-main: #e7290f;
+
+$bgColor-secondary: $color-main;
+// color-header
+$bgColor-header: $color-primary;
+$borderColor-header: $color-secondary;
+$linkColor-header: $color-secondary;
+$linkColor-header-hover: $color-main;
+// color-footer
+$bgColor-footer: $color-primary;
+$bgColor-social: $color-secondary;
+$bgColor-gotop: $color-secondary;
+$fontColor-footer: $color-secondary;
+$fontColor-gotop: $color-main;
+$iconColor-footer: $color-main;
+$bgColor-social-fb: #3b5998;
+$fontColor-social-fb: #3b5998;
+$bgColor-social-ig: #cd486b;
+$fontColor-social-ig: #cd486b;
+// color-catalog
+$bgColor-catalog: $color-main;
+$borderColor-catalog: $color-main;
+$fontColor-catalog: $color-primary;
+$fontColor-catalog-active: $color-main;
+// color-product
+$bgColor-product: $color-main;
+$borderColor-product: $color-main;
+$fontColor-product: $color-primary;
+$fontColor-product-title: $color-main;
+$btnColor-product: $color-main;
+// color-news
+$bgColor-news: $color-main;
+$borderColor-news: $color-main;
+// color-contact
+$bgColor-contact: $color-primary;
+$bgColor-contact-btn: $color-secondary;
+$borderColor-contact: $color-secondary;
+$gradientColor-contact-first: rgba(255, 205, 218, 0.5);
+$gradientColor-contact-second: rgba(192, 231, 255, 0.5);
+
+// font size
+$font-xs: 0.8rem;
+$font-m: 1.2rem;
+$font-l: 1.4rem;
+$font-xl: 1.6rem;
+
+// z-index
+$zindexHeader: 9999;
+$zindexGotop: 999;

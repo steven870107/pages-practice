@@ -1,0 +1,169 @@
+.catalog__menu{
+    display: none;
+    padding-bottom: 50px;
+    @include lg{
+        display: block;
+    }
+    >li{
+        margin-bottom: 15px;
+        >a{
+            box-shadow: 0 5px 5px rgba($bgColor-catalog,.2);
+            border: 1px solid rgba($borderColor-catalog,.2);
+            display: block;
+            padding: 10px 15px;
+            font-size: $font-m;
+            border-radius: 10px 10px 0px 0px;
+            &:hover,&.active{
+                background-color: rgba($bgColor-catalog,.2);
+            }
+        }
+        &:nth-child(1)>a::after,
+        &:nth-child(2)>a::after{
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 700;
+            margin-left: 10px;
+        }
+    }
+    a{
+        font-weight: 500;
+        color: $fontColor-catalog;
+        &.active{
+            color: $fontColor-catalog-active;
+        }
+    }
+    @include lg{
+        padding-bottom: 0;
+    }
+}
+.catalog__menu__toggle{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    text-align: center;
+    color: $fontColor-catalog;
+    border: 1px solid rgba($borderColor-catalog,.2);
+    box-shadow: 0 5px 5px rgba($bgColor-catalog,.2);
+    @include font($font-xl,500);
+    @include lg{
+        display: none;
+    }
+    & i{
+        margin-left: 10px;
+        transition: all .5s ease-in-out;
+        &.active{
+            transform: rotate(180deg);
+        }
+    }
+}
+.catalog__menu__open{
+    display: none;
+    border: 1px solid rgba($borderColor-catalog,.1);
+    background-color: rgba($bgColor-catalog,.1);
+    &.show{
+        display: block;
+    }
+    a{
+        display: block;
+        padding: 10px 30px;
+        &:hover,&.active{
+            border-left: 5px solid rgba($borderColor-catalog,.2);
+        }
+    }
+}
+// catalog__title
+.catalog__title{
+    position: relative;
+    margin-bottom: 20px;
+    text-align: center;
+    @include font($font-xl,500);
+    letter-spacing: 5px;
+    text-indent: 5px;
+    @include md{
+        margin-bottom: 30px;
+        @include font(30px,500);
+    }
+    @include lg{
+        margin-bottom: 50px;
+        @include font(35px,500);
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        width: 25%;
+        height: 1px;
+        top: 50%;
+        left: 0;
+        background-color: rgba($bgColor-catalog,.5);
+        @include md{
+            width: 35%;
+        }
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 25%;
+        height: 1px;
+        top: 50%;
+        right: 0;
+        background-color: rgba($bgColor-catalog,.5);
+        @include md{
+            width: 35%;
+        }
+    }
+}
+// listItem style
+.listItem__pics{
+    position: relative;
+    img:first-child{
+        position: absolute;
+        opacity: 0;
+    }
+    img:last-child{
+        opacity: 1;
+    }
+}
+.catalog__list li{
+    padding: 30px;
+    @include md{
+        padding: 20px;
+    }
+    @include lg{
+        padding: 10px;
+    }
+}
+.listItem{
+    position: relative;
+    top: 0;
+    text-align: center;
+    border: 1px solid rgba($borderColor-catalog,.3);
+    border-radius: 5%;
+    padding: 10px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    img{
+        transition: all .5s ease-in-out;
+    }
+    &__title{
+        color: $fontColor-catalog;
+        @include font($font-m,500);
+    }
+    &:hover{
+        box-shadow: 0px 5px 10px rgba($bgColor-catalog,.5);
+        top: -5px;
+        img{
+            transform: scale(1.2);
+        }
+        .listItem__pics img:first-child{
+            opacity: 1;
+        }
+        .listItem__pics img:last-child{
+            opacity: 0;
+        }
+        .listItem__title{
+            color: $fontColor-catalog-active;
+        }
+    }
+}

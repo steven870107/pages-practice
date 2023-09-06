@@ -1,0 +1,18 @@
+// content
+.content{
+    &__news,&__products,&__others{
+        &__title{
+            @include md{
+                width: 30%;
+                // box-shadow: 3px 10px 10px black;
+            }
+        }
+        &__img{
+            // box-shadow: 3px 10px 10px black;
+            width: 100%;
+            @include md{
+                width: 70%;
+            }
+        }
+    }
+}

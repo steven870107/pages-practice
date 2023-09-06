@@ -1,0 +1,202 @@
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $bgColor-header;
+    box-shadow: 0 5px 10px rgba($bgColor-header,.2);
+    z-index: $zindexHeader;
+}
+
+// navbar
+.navbar{
+    padding-left: 15px;
+    padding-right: 15px;
+    &__logoLink{
+        display: block;
+        width: 120px;
+        @include md{
+            width: 180px;
+        }
+    }
+}
+
+// navbar menu
+.navbar__menu{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 84px;
+    left: 0;
+    text-align: center;
+    background-color: rgba($bgColor-header,.6);
+    transition: all .5s ease-in-out;
+    @include backdrop-filter(blur(5px));
+    @include md{
+        width: 40%;
+    }
+    @include lg{
+        display: flex;
+        justify-content: space-around;
+        position: initial;
+        width: 50%;
+        height: auto;
+        background-color: transparent;
+        @include backdrop-filter(initial);
+    }
+    a{
+        display: block;
+        width: 100%;
+    }
+    li{
+        border-bottom: 1px solid $borderColor-header;
+        @include lg{
+            border: none;
+        }
+    }
+    &__link,&__language{
+        padding: 30px 10px;
+        color: $linkColor-header;
+        @include lg{
+            &:hover{
+                color: lighten($linkColor-header-hover,5%);
+            }
+        }
+    }
+    &.show{
+        display: block;
+        animation: opacity .5s ease-in-out;
+    }
+}
+
+.navbar__menu__language{
+    position: relative;
+    cursor: pointer;
+    & i.active{
+        color: lighten($linkColor-header-hover,5%);
+    }
+    @include lg{
+        &:hover{
+            .navbar__menu__language__choose{
+                display: block;
+            }
+        }
+    }
+}
+.navbar__menu__language__choose{
+    position: absolute;
+    top: 84px;
+    right: 0;
+    width: 300%;
+    background-color: rgba($bgColor-header,.6);
+    box-shadow: 0px 5px 10px rgba($bgColor-header,.2);
+    animation: opacity 0.5s ease-in-out;
+    @include backdrop-filter(blur(5px));
+    &.active{
+        display: block;
+    }
+    a{
+        display: block;
+        width: 100%;
+        color: $linkColor-header;
+        padding: 20px 23px;
+    }
+    a:hover{
+        background-color: $bgColor-header;
+        color: lighten($linkColor-header-hover,5%);
+    }
+    & li:first-child{
+        border-bottom: 1px solid $borderColor-header;
+    }
+}
+
+// navbar menu toggleBtn
+.navbar__toggleBtn{
+    cursor: pointer;
+    width: 45px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    @include lg{
+        display: none;
+    }
+    &__bars{
+        cursor: pointer;
+        position: relative;
+        width: 30px;
+        height: 2px;
+        top: -1px;
+        background-color: $linkColor-header;
+        border-radius: 10px;
+        transition: all .3s ease-in-out;
+        &.active{
+            background-color: transparent;
+            transform: translateX(10px)
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: -10px;
+            left: 0;
+            background-color: $linkColor-header;
+            border-radius: 10px;
+            transition: all .3s ease-in-out;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 10px;
+            left: 0;
+            background-color: $linkColor-header;
+            border-radius: 10px;
+            transition: all .3s ease-in-out;
+        }
+        &.active::before{
+            transform: translateX(-10px) rotate(135deg);
+            top: 0;
+            background-color: lighten($linkColor-header-hover,5%);
+        }
+        &.active::after{
+            transform: translateX(-10px) rotate(-135deg);
+            top: 0;
+            background-color: lighten($linkColor-header-hover,5%);
+        }
+    }
+}
+
+// window scrollTop
+.header.scrollTop{
+    background-color: rgba($bgColor-header,.6);
+    @include lg{
+        &:hover{
+            background-color: $bgColor-header;
+        }
+    }
+}
+.navbar__menu__link.scrollTop,.navbar__menu__language.scrollTop{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.navbar__menu__language__choose.scrollTop{
+    top: 64px;
+}
+.navbar__menu.scrollTop{
+    top: 64px;
+}
+
+.header,
+.navbar__menu__link,
+.navbar__menu__language,
+.navbar__menu__language__choose,
+.navbar__menu{
+    transition: all .3s ease-in-out;
+}
